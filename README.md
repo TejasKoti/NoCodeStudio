@@ -21,22 +21,22 @@ React frontend, TypeScript API, and Python FastAPI training engine.
 ## 🖼 Screenshots
 
 - **Landing Page**  
-  ![Landing](NoCodeStudio/Modifiers/PreviewImages/A_Landing.gif)
+  ![Landing](./Modifiers/PreviewImages/A_Landing.gif)
 
 - **Login Page**  
-  ![Login](NoCodeStudio/Modifiers/PreviewImages/B_LoginPage.png)
+  ![Login](./Modifiers/PreviewImages/B_LoginPage.png)
 
 - **Workspace Overview**  
-  ![Workspace](NoCodeStudio/Modifiers/PreviewImages/C_Workspace.png)
+  ![Workspace](./Modifiers/PreviewImages/C_Workspace.png)
 
 - **Model Creation / Builder Page**  
-  ![Builder](NoCodeStudio/Modifiers/PreviewImages/D_CreationPage.png)
+  ![Builder](./Modifiers/PreviewImages/D_CreationPage.png)
 
 - **Training Complete**  
-  ![Training Finished](NoCodeStudio/Modifiers/PreviewImages/E_TrainingFinished.png)
+  ![Training Finished](./Modifiers/PreviewImages/E_TrainingFinished.png)
 
 - **Training Speed & Metrics**  
-  ![Training Speed](NoCodeStudio/Modifiers/PreviewImages/F_TrainingSpeed.png)
+  ![Training Speed](./Modifiers/PreviewImages/F_TrainingSpeed.png)
 
 ---
 
