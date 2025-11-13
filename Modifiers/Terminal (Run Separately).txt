@@ -1,0 +1,24 @@
+Install Terminal & Close : 
+cd C:\NoCodeStudio\apps\api
+pnpm install
+cd C:\NoCodeStudio\apps\web
+pnpm install
+
+Then in separate PowerShells :
+
+PowerShell 1 :
+conda activate nocodedl
+cd C:\Users\TheAstrio\Documents\Projects\NoCodeStudio\apps\py-tools
+uvicorn main:app --reload --port 8000
+
+PowerShell 2 :
+cd C:\Users\TheAstrio\Documents\Projects\NoCodeStudio\apps\api
+pnpm dev
+
+Powershell 3 :
+cd C:\Users\TheAstrio\Documents\Projects\NoCodeStudio\apps\web
+pnpm dev
+
+Browser Link (After Running 3 Above in separate terminal) : http://localhost:5173/
+
+MongoDB : https://cloud.mongodb.com/v2/<redacted>/metrics/replicaSet/<redacted>/explorer/test/folders/find
