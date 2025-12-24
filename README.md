@@ -19,20 +19,24 @@ NoCodeStudio functions as a **lightweight no-code ML IDE**, powered by a React f
 
 - **Landing Page**  
 
+
+https://github.com/user-attachments/assets/8ee1df47-e2f3-4fb7-846d-076b00361696
+
+
 - **Login Page**  
-  ![Login](NoCodeStudio/Extras/PreviewImages/B_LoginPage.png)
+  ![Login](./Extras/PreviewImages/B_LoginPage.png)
 
 - **Workspace Overview**  
-  ![Workspace](NoCodeStudio/Extras/PreviewImages/C_Workspace.png)
+  ![Workspace](./Extras/PreviewImages/C_Workspace.png)
 
 - **Model Creation / Builder Page**  
-  ![Builder](NoCodeStudio/Extras/PreviewImages/D_CreationPage.png)
+  ![Builder](./Extras/PreviewImages/D_CreationPage.png)
 
 - **Training Complete**  
-  ![Training Finished](NoCodeStudio/Extras/PreviewImages/E_TrainingFinished.png)
+  ![Training Finished](./Extras/PreviewImages/E_TrainingFinished.png)
 
 - **Training Speed & Metrics**  
-  ![Training Speed](NoCodeStudio/Extras/PreviewImages/F_TrainingSpeed.png)
+  ![Training Speed](./Extras/PreviewImages/F_TrainingSpeed.png)
 
 
 ---
