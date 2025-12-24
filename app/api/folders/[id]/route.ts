@@ -4,16 +4,20 @@ import { requireUserId } from "@/lib/auth";
 import { Project } from "@/lib/models/Project";
 import { Folder } from "@/lib/models/Folder";
 
+/* =========================
+   GET /api/projects/[id]
+========================= */
 export async function GET(
   req: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     await connectDB();
     const userId = requireUserId(req);
+    const { id } = await params;
 
     const project = await Project.findOne({
-      _id: params.id,
+      _id: id,
       userId,
     });
 
@@ -25,19 +29,28 @@ export async function GET(
   } catch (err: any) {
     const status = err?.status || 500;
     return NextResponse.json(
-      { message: status === 401 ? "Unauthorized" : "Server error fetching project" },
+      {
+        message:
+          status === 401
+            ? "Unauthorized"
+            : "Server error fetching project",
+      },
       { status }
     );
   }
 }
 
+/* =========================
+   PUT /api/projects/[id]
+========================= */
 export async function PUT(
   req: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     await connectDB();
     const userId = requireUserId(req);
+    const { id } = await params;
 
     const body = await req.json();
     const { title, name, description, tags, thumbnail, graph } = body;
@@ -50,7 +63,7 @@ export async function PUT(
     if (graph !== undefined) update.graph = graph;
 
     const project = await Project.findOneAndUpdate(
-      { _id: params.id, userId },
+      { _id: id, userId },
       update,
       { new: true }
     );
@@ -63,22 +76,31 @@ export async function PUT(
   } catch (err: any) {
     const status = err?.status || 500;
     return NextResponse.json(
-      { message: status === 401 ? "Unauthorized" : "Server error updating project" },
+      {
+        message:
+          status === 401
+            ? "Unauthorized"
+            : "Server error updating project",
+      },
       { status }
     );
   }
 }
 
+/* =========================
+   DELETE /api/projects/[id]
+========================= */
 export async function DELETE(
   req: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     await connectDB();
     const userId = requireUserId(req);
+    const { id } = await params;
 
     const project = await Project.findOneAndDelete({
-      _id: params.id,
+      _id: id,
       userId,
     });
 
@@ -90,15 +112,22 @@ export async function DELETE(
     }
 
     await Folder.updateMany(
-      { projects: params.id },
-      { $pull: { projects: params.id } }
+      { projects: id },
+      { $pull: { projects: id } }
     );
 
-    return NextResponse.json({ message: "Project deleted successfully" });
+    return NextResponse.json({
+      message: "Project deleted successfully",
+    });
   } catch (err: any) {
     const status = err?.status || 500;
     return NextResponse.json(
-      { message: status === 401 ? "Unauthorized" : "Server error deleting project" },
+      {
+        message:
+          status === 401
+            ? "Unauthorized"
+            : "Server error deleting project",
+      },
       { status }
     );
   }
