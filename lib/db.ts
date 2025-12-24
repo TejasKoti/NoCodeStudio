@@ -6,7 +6,6 @@ type MongooseCache = {
 };
 
 declare global {
-  // eslint-disable-next-line no-var
   var __mongooseCache: MongooseCache | undefined;
 }
 
@@ -28,7 +27,9 @@ export async function connectDB() {
 
   if (!cache.promise) {
     cache.promise = mongoose
-      .connect(getMongoUri())
+      .connect(getMongoUri(), {
+        family: 4,
+      })
       .then((m) => m);
   }
 

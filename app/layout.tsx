@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "NoCode Studio",
   description: "Create, train, and deploy AI visually",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
